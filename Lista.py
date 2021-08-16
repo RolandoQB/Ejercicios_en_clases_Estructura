@@ -19,15 +19,21 @@ class Lista:
             return self.lista[pos]
 
     def obtenerEliminando(self,pos):
-        aux=[]
+        
         if pos < 0 or pos >= self.longitud:
             return None
         else:
-            aux += self.lista[pos]
-            self.lista-=aux
-            print(aux)
-            print(self.lista)
-            return self.lista[pos]
+            eliminado=self.lista[pos]
+            aux=[]
+            # self.lista=self.lista[:pos] + self.lista[pos+1:]
+            for ind in range(pos):
+                aux=aux+[self.lista[ind]]
+            for ind2 in range(pos+1,self.longitud):
+                aux=aux+[self.lista[ind2]]
+            self.longitud-=1
+            self.lista=aux
+            return (self.lista,eliminado)
+            
 
     def mostrar(self):
         print("{:3}{:9} {}".format("","Lista","Posicion"))
@@ -41,10 +47,10 @@ lista1.append(True)
 lista1.append("Milagro")
 lista1.mostrar()
 posicion = int(input("ingrese posicion para obtener el elemento: "))
-# resp= lista1.obtener(posicion)
-# if resp ==None:
-#     print("Posicion no valida, Verifique la Lista.....")
-# else:
-#     print("El elemento de la posicion: {} es: {}".format(posicion,resp))
-lista1.obtenerEliminando(posicion)
+resp= lista1.obtenerEliminando(posicion)
+if resp ==None:
+    print("Posicion no valida, Verifique la Lista.....")
+else:
+    print("El elemento de la posicion: {} es: {}".format(posicion,resp))
+
 
