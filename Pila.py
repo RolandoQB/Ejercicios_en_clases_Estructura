@@ -1,4 +1,4 @@
-class Pila:
+class Pila1:
     def __init__(self,tamanio):
         self.lista=[]
         self.size=tamanio
@@ -10,6 +10,7 @@ class Pila:
             self.top += 1
         else:
             print("La list esta llena")
+
     def pop(self):
         if self.empty():
             return None
@@ -38,6 +39,7 @@ pila1 = Pila(3)
 pila1.push(8)
 pila1.push(10)
 pila1.push(12)
+pila1.push(4)
 pila1.push(4)
 pila1.show()
 print(pila1.longitud())
