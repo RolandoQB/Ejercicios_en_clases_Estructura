@@ -14,6 +14,7 @@ class Texto:
                 # estudiantes.write('\n')
 
 text=Texto("estudiantes.txt")
+
 text.write(["Marcos Vera","Ana Bohorquez","Miguel Vera"],"a")
 text.read()
 
